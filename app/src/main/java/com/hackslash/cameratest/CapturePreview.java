@@ -38,9 +38,9 @@ public class CapturePreview extends Activity implements SurfaceHolder.Callback,S
     Float azimut;  // View to draw a compass
     private SensorManager mSensorManager;
     Sensor orientation;
-    public float xaxis[]=new float[50];
-    public float yaxis[]=new float[50];
-    public float zaxis[]=new float[50];
+    public float xaxis[]=new float[2000];
+    public float yaxis[]=new float[2000];
+    public float zaxis[]=new float[2000];
 
 
     public int count=1;

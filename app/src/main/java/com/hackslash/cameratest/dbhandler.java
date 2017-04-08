@@ -197,17 +197,19 @@ public class dbhandler {
         return password;
 
     }
+    */
 
+    /*
+    public float[][] queryall() {
 
-    public String[] search(String med) {
-
-        String query = "SELECT " + med_name + "," + med_cost + "," + gen_med + "," + gen_cost + " FROM " + gen_table + " CROSS JOIN " + med_table + " WHERE " + gen_med + "=" + gen_name + " AND " + med_name + "='" + med + "'";
+        String query = "SELECT * FROM " + const_table;
         Cursor c3 = our_database.rawQuery(query, null);
-        String result[] = new String[4];
-        int imed = c3.getColumnIndex(med_name);
-        int imcost = c3.getColumnIndex(med_cost);
-        int igen = c3.getColumnIndex(gen_med);
-        int igcost = c3.getColumnIndex(gen_cost);
+        double result[][] = new double[10][10];
+
+        int irow = c3.getColumnIndex();
+        int islope = c3.getColumnIndex(med_cost);
+        int i = c3.getColumnIndex(gen_med);
+
 
         for (c3.moveToFirst(); !c3.isAfterLast(); c3.moveToNext()) {
             result[0] = c3.getString(imed);
@@ -219,10 +221,35 @@ public class dbhandler {
         }
         return result;
 
+    }*/
+
+
+
+    public double[] querydata(int rowid) {
+
+        String query = "SELECT "+slope + "," + constant+" FROM " + const_table +" WHERE "+rowid2+"='"+ rowid +"'";;
+        Cursor c3 = our_database.rawQuery(query, null);
+        double result[]=new double[2];
+
+
+        int islope = c3.getColumnIndex(slope);
+        int iconst = c3.getColumnIndex(constant);
+
+
+        for (c3.moveToFirst(); !c3.isAfterLast(); c3.moveToNext()) {
+            result[0] = c3.getDouble(islope);
+            result[1] = c3.getDouble(iconst);
+
+
+
+        }
+        return result;
+
     }
 
 
-    */
+
+
 
     ///////////shit//////////////////
 

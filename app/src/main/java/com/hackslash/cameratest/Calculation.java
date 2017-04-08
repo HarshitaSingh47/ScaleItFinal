@@ -60,7 +60,7 @@ public class Calculation extends AppCompatActivity {
         double arr[] = new double[2];
 
         arr[0] = a2;//slope
-        arr[1] = a1;//constant
+        arr[1] = distance;//constant
 
 
 
@@ -89,11 +89,26 @@ public class Calculation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //showRes();
-
+                /*
                 double result[]=new double[3];
                 result=entry.getConstants();
 
-                Toast.makeText(getApplicationContext()," "+result[0]+" "+result[1]+" "+ result[2],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext()," "+result[0]+" "+result[1]+" "+ result[2],Toast.LENGTH_SHORT).show();*/
+                double a[]=new double[2];
+                double b[]=new double[2];
+                double coord[]=new double[2];
+
+
+                for(i=0;i<4;i++){
+                    a=entry.querydata(i);
+                    b=entry.querydata((i+1)%4);
+
+                    coord=equation_solver(a[0],a[1],b[0],b[1]);
+                    Toast.makeText(getApplicationContext(),"X: "+coord[0]+" Y:"+coord[1],Toast.LENGTH_SHORT).show();
+
+
+                }
+
             }
         });
         //saveArray(arr,"lineinfo",getApplicationContext(),i);
@@ -111,12 +126,16 @@ public class Calculation extends AppCompatActivity {
         //entry.close();
 
     }
-    public void equation_solver(double m1,double c1,double m2,double c2)
+
+    public double[] equation_solver(double m1,double c1,double m2,double c2)
     {
         double x_coord,y_coord;
         x_coord = (c2-c1)/(m1-m2);
         y_coord = (m1*c2 - m2*c1)/(m1-m2);
-
+        double x[]=new double[2];
+        x[0]=x_coord;
+        x[1]=y_coord;
+        return x;
     }
 
 
@@ -142,7 +161,7 @@ public class Calculation extends AppCompatActivity {
 
     public void showRes(){
 
-        Intent i=new Intent(Calculation.this,ShowResults.class);
+        Intent i=new Intent(Calculation.this,ShowDetails.class);
         startActivity(i);
 
     }
