@@ -36,6 +36,9 @@
         <activity android:name=".Calculation">
 
         </activity>
+        <activity android:name=".ShowResults">
+
+        </activity>
 
 
 
