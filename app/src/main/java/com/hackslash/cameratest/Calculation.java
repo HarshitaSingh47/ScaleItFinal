@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -42,13 +43,14 @@ public class Calculation extends AppCompatActivity {
         angles[2]=Float.valueOf(angle[2]);
 
         Toast.makeText(this, angles[0]+ " " + angles[1]+ " "+ angles[2] , Toast.LENGTH_SHORT).show();
+        Log.d("Angles: " , angles[0]+" "+angles[1]+ " "+ angles[2]);
         entry=new dbhandler(Calculation.this);
 
         double vertical_angle,horizontal_angle;
         vertical_angle = 90 + angles[1];
         vertical_angle = 90 - vertical_angle;
         //assuming height is h
-        double h= 1.0 ;
+        double h= 1.5;
         double a1,a2,a3,a4;
         //main activity.getheight
         a1 = Math.tan(Math.toRadians(vertical_angle));
@@ -93,18 +95,26 @@ public class Calculation extends AppCompatActivity {
                 double result[]=new double[3];
                 result=entry.getConstants();
 
-                Toast.makeText(getApplicationContext()," "+result[0]+" "+result[1]+" "+ result[2],Toast.LENGTH_SHORT).show();*/
+                Toast.makeText(getApplicationContext()," Slope "+result[1]+" Inte "+ result[2],Toast.LENGTH_SHORT).show();
+                */
+
                 double a[]=new double[2];
                 double b[]=new double[2];
                 double coord[]=new double[2];
 
 
-                for(i=0;i<4;i++){
+                for(i=1;i<5;i++){
                     a=entry.querydata(i);
-                    b=entry.querydata((i+1)%4);
+                    if(i+1==5)
+                        i=0;
+                    b=entry.querydata((i+1));
+                    //Toast.makeText(getApplicationContext(),"slope: "+a[0]+" intercept:"+a[1],Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"slope: "+a[0]+" intercept:"+a[1]   +   "   slope: "+b[0]+" intercept:"+b[1]+ "                 "+"X: "+coord[0]+" Y:"+coord[1],Toast.LENGTH_LONG).show();
+
 
                     coord=equation_solver(a[0],a[1],b[0],b[1]);
-                    Toast.makeText(getApplicationContext(),"X: "+coord[0]+" Y:"+coord[1],Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"slope: "+a[0]+" intercept:"+a[1]   +   "   slope: "+b[0]+" intercept:"+b[1]+ "                 "+"X: "+coord[0]+" Y:"+coord[1],Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"X: "+coord[0]+" Y:"+coord[1],Toast.LENGTH_SHORT).show();
 
 
                 }

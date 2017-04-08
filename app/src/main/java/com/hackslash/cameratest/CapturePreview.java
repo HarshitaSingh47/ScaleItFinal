@@ -95,14 +95,14 @@ public class CapturePreview extends Activity implements SurfaceHolder.Callback,S
 
                         mSensorManager.unregisterListener(CapturePreview.this);
 
-                        int i;
+                        int j;
                         float sumx=0;
                         float sumy=0;
                         float sumz=0;
-                        for(i=0;i<50;i++){
-                            sumx+=xaxis[i];
-                            sumy+=yaxis[i];
-                            sumz+=zaxis[i];
+                        for(j=0;j<=k;j++){
+                            sumx+=xaxis[j];
+                            sumy+=yaxis[j];
+                            sumz+=zaxis[j];
                         }
                         resx=sumx/count;
                         resy=sumy/count;
@@ -113,14 +113,16 @@ public class CapturePreview extends Activity implements SurfaceHolder.Callback,S
                             public void run() {
                                 //Toast.makeText(getApplicationContext(),resx+ " "+resy+" "+resz,Toast.LENGTH_SHORT).show();
 
-                                Intent i=new Intent(getApplicationContext(),Calculation.class);
+                                Intent intent=new Intent(getApplicationContext(),Calculation.class);
+                                k=0;
+                                count=0;
 
                                 Bundle extras = new Bundle();
                                 extras.putString("angleX", Float.toString(resx));
                                 extras.putString("angleY", Float.toString(resy));
                                 extras.putString("angleZ", Float.toString(resz));
-                                i.putExtras(extras);
-                                startActivity(i);
+                                intent.putExtras(extras);
+                                startActivity(intent);
 
 
 

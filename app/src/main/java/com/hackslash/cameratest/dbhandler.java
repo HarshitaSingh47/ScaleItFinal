@@ -240,8 +240,6 @@ public class dbhandler {
             result[0] = c3.getDouble(islope);
             result[1] = c3.getDouble(iconst);
 
-
-
         }
         return result;
 

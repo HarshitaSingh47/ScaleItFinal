@@ -21,5 +21,6 @@
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:id="@+id/button2"
-        android:onClick="openCamera"/>
+        android:onClick="openCamera"
+        android:ellipsize="marquee"/>
 </RelativeLayout>
