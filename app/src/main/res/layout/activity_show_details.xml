@@ -5,14 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Coordinates for 4 points"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="110dp"
+
+
+
+        />
 
     <TextView
         android:id="@+id/textViewW1A2"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textViewW1A1"
         android:layout_alignBottom="@+id/textViewW1A1"
-        android:layout_alignStart="@+id/textViewW2A2"
+        android:layout_marginLeft="200dp"
         android:text="TextView" />
 
     <TextView
@@ -20,28 +33,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_marginTop="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textViewW2A1" />
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+
+        />
 
     <TextView
         android:id="@+id/textViewW2A1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="29dp"
         android:layout_below="@+id/textViewW1A1"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="78dp" />
+        />
 
     <TextView
         android:id="@+id/textViewW2A2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_alignBottom="@+id/textViewW2A1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="94dp" />
+        android:layout_marginLeft="200dp"
+        android:layout_alignBottom="@+id/textViewW2A1" />
 
     <TextView
         android:id="@+id/textViewW3A1"
@@ -59,13 +73,14 @@
         android:text="TextView"
         android:layout_alignBaseline="@+id/textViewW3A1"
         android:layout_alignBottom="@+id/textViewW3A1"
-        android:layout_alignStart="@+id/textViewW2A2" />
+        android:layout_marginLeft="200dp" />
 
     <TextView
         android:id="@+id/textViewW4A1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+
         android:layout_below="@+id/textViewW3A1"
         android:layout_alignStart="@+id/textViewW3A1"
         android:layout_marginTop="27dp" />
@@ -81,6 +96,7 @@
 
     <TextView
         android:id="@+id/textViewW1S"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -90,60 +106,65 @@
     <TextView
         android:id="@+id/textViewW1C"
         android:layout_width="wrap_content"
+        android:visibility="invisible"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/textViewW4A2" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="INTERCEPTS /DISTANCE"
+        android:layout_marginLeft="110dp"
+        android:id="@+id/xxx"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/textViewWS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@+id/xxx"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="TextView" />
+
+
+    <TextView
         android:id="@+id/textViewW2S"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textViewW1S"
-        android:layout_below="@+id/textViewW1S"
-        android:layout_marginTop="31dp"
+        android:layout_below="@+id/textViewWS"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textViewW2C"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewW2S"
-        android:layout_alignEnd="@+id/textViewW1C"
-        android:text="TextView" />
+
 
     <TextView
         android:id="@+id/textViewW3S"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textViewW2S"
         android:layout_below="@+id/textViewW2S"
-        android:layout_marginTop="36dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
         android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textViewW3C"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_alignBaseline="@+id/textViewW3S"
-        android:layout_alignBottom="@+id/textViewW3S"
-        android:layout_alignStart="@+id/textViewW2C" />
 
     <TextView
         android:id="@+id/textViewW4S"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textViewW3S"
+
         android:layout_below="@+id/textViewW3S"
-        android:layout_marginTop="40dp"
+        android:visibility="visible"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textViewW4C"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewW4S"
-        android:layout_alignStart="@+id/textViewW3C"
-        android:text="TextView" />
+
 </RelativeLayout>

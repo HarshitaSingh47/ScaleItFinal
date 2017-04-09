@@ -5,13 +5,36 @@
               android:layout_height="match_parent">
 
     <Button
-        android:text="Open"
-        android:layout_width="wrap_content"
+        android:text="TAKE READINGS"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:onClick="openCamera"/>
+        android:onClick="openCamera"
+        android:background="@drawable/mybutton"/>
+
+    Button
+        android:id="@+id/btn_launch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Measuring"
+        android:background="@drawable/mybutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editText_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter height (in metres)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="165dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Open2"
@@ -22,5 +45,5 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/button2"
         android:onClick="openCamera"
-        android:ellipsize="marquee"/>
+        />
 </RelativeLayout>

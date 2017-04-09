@@ -108,6 +108,10 @@ public class CapturePreview extends Activity implements SurfaceHolder.Callback,S
                         resy=sumy/count;
                         resz=sumz/count;
 
+                        Log.e("AVG X ", resx + " ");
+                        Log.e("AVG Y ", resy + " ");
+
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

@@ -5,20 +5,22 @@
               android:layout_height="match_parent">
 
     <Button
-        android:text="measure upto 4"
+        android:text="  NEXT READING  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="187dp"
-        android:id="@+id/button3"/>
+        android:id="@+id/button3"
+        android:background="@drawable/mybutton"/>
 
     <Button
-        android:text="calculate"
+        android:text="  CALCULATE  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/mybutton"/>
 </RelativeLayout>

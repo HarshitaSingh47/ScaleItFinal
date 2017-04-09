@@ -246,6 +246,36 @@ public class dbhandler {
     }
 
 
+    public double[] queryAngles(int row) {
+
+        String query = "SELECT * FROM " + angle_table +" WHERE "+rowid+"='"+ row +"'";;
+        Cursor c3 = our_database.rawQuery(query, null);
+        double result[]=new double[4];
+
+
+        int irow = c3.getColumnIndex(rowid);
+        int ix = c3.getColumnIndex(anglex);
+        int iy = c3.getColumnIndex(angley);
+        int iz = c3.getColumnIndex(anglez);
+
+
+        for (c3.moveToFirst(); !c3.isAfterLast(); c3.moveToNext()) {
+            result[0] = c3.getDouble(irow);
+            result[1] = c3.getDouble(ix);
+            result[2] = c3.getDouble(iy);
+            result[3] = c3.getDouble(iz);
+
+
+
+        }
+        return result;
+
+    }
+
+
+
+
+
 
 
 
